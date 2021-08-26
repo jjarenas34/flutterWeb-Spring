@@ -258,24 +258,31 @@ class _ProductDetailsPageState extends State<ProductDetailsPage>
     );
   }
 
-  Container createSizeItem(int index) {
-    return Container(
-      width: 28,
-      margin: EdgeInsets.all(4),
-      height: 28,
-      padding: EdgeInsets.only(top: 8),
-      child: Text(
-        listSize[index].size.toString(),
-        style: CustomTextStyle.textFormFieldSemiBold
-            .copyWith(fontSize: 12, color: Colors.black.withOpacity(0.8)),
-        textAlign: TextAlign.center,
+  GestureDetector createSizeItem(int index) {
+    return GestureDetector(
+      child: Container(
+        width: 28,
+        margin: EdgeInsets.all(4),
+        height: 28,
+        padding: EdgeInsets.only(top: 8),
+        child: Text(
+          listSize[index].size.toString(),
+          style: CustomTextStyle.textFormFieldSemiBold
+              .copyWith(fontSize: 12, color: Colors.black.withOpacity(0.8)),
+          textAlign: TextAlign.center,
+        ),
+        decoration: BoxDecoration(
+            color: Colors.white,
+            border: Border.all(
+                color: selectedSize == index ? Colors.blue : Colors.grey,
+                width: 1),
+            shape: BoxShape.circle),
       ),
-      decoration: BoxDecoration(
-          color: Colors.white,
-          border: Border.all(
-              color: selectedSize == index ? Colors.blue : Colors.grey,
-              width: 1),
-          shape: BoxShape.circle),
+      onTap: () {
+        setState(() {
+          selectedSize = index;
+        });
+      },
     );
   }
 

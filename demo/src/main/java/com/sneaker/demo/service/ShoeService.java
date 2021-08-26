@@ -38,4 +38,9 @@ public class ShoeService implements IShoeService{
         return response;
     }
 
+    @Override
+    public Shoe getShoe(long id){
+        return shoeDAO.getById(id);
+    }
+
 }
