@@ -61,6 +61,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage>
   Widget build(BuildContext context) {
     var halfOfScreen = MediaQuery.of(context).size.height / 1.5;
     print("color seleccionado" + selectedColor.toString());
+    print("talla seleccionado" + selectedSize.toString());
     return Scaffold(
       backgroundColor: Colors.white,
       //resizeToAvoidBottomPadding: false,

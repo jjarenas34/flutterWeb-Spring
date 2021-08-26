@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:challenger/constant.dart';
+import 'package:challenger/util/constant.dart';
 import 'package:challenger/home/home.dart';
 
 void main() {

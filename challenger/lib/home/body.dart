@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 
-import 'package:challenger/constant.dart';
+import 'package:challenger/util/constant.dart';
 import 'package:challenger/models/product.dart';
 import 'package:challenger/home/item_cart.dart';
 import 'package:challenger/home/detail/product_detail.dart';
