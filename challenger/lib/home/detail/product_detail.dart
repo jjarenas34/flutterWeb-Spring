@@ -48,6 +48,13 @@ class _ProductDetailsPageState extends State<ProductDetailsPage>
     setState(() {});
   }
 
+  setData(int id, int idSize) async {
+    //print("entro a cargar");
+    await addCart(id, idSize);
+    //print("salio a cargar");
+    setState(() {});
+  }
+
   void addColor() {
     listColor.add(Colors.red);
     listColor.add(Colors.green);
@@ -237,7 +244,10 @@ class _ProductDetailsPageState extends State<ProductDetailsPage>
           ),
           Utils.getSizedBox(height: 16),
           RaisedButton(
-            onPressed: () {},
+            onPressed: () {
+              setData(id, listSize[selectedSize].id);
+              print("registro el producto");
+            },
             color: Colors.green,
             padding: EdgeInsets.only(top: 12, left: 60, right: 60, bottom: 12),
             shape: RoundedRectangleBorder(
@@ -326,5 +336,19 @@ class _ProductDetailsPageState extends State<ProductDetailsPage>
       // If that response was not OK, throw an error.
       throw Exception('Failed to load post');
     }
+  }
+
+  Future<http.Response> addCart(int id, int idSize) {
+    return http.post(
+      Uri.parse('http://localhost:8080/solicitud/addCart'),
+      headers: <String, String>{
+        'Content-Type': 'application/json; charset=UTF-8',
+      },
+      body: jsonEncode(<String, int>{
+        'idProduct': id,
+        'idSize': idSize,
+        'idCart': 1,
+      }),
+    );
   }
 }

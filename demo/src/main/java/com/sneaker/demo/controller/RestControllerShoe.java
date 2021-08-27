@@ -44,9 +44,11 @@ public class RestControllerShoe {
     private void addCart(@RequestBody SolicitudRecep nuevaSolicitud){
         ShoppingCartUser cart= new ShoppingCartUser();
         
-        cart.setShoe(shoe);
-        cart.setShoppingCart(shoppingCart);
-        cart.setTalla(talla);
+        cart.setShoe(shoeService.getShoe(nuevaSolicitud.getIdProduct()));
+        cart.setShoppingCart(shoeService.getShoppingCart(nuevaSolicitud.getIdCart()));
+        cart.setTalla(shoeService.getSize(nuevaSolicitud.getIdSize()));
+
+        shoeService.setCartUser(cart);
 
     } 
 }

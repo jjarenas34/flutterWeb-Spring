@@ -1,31 +1,31 @@
 package com.sneaker.demo.util;
 
 public class SolicitudRecep {
-    String idProduct;
-    String idSize;
-    String idCart;
+    long idProduct;
+    long idSize;
+    long idCart;
 
-    public String getIdProduct() {
+    public long getIdProduct() {
 		return idProduct;
 	}
 
-	public void setIdProduct(String idProduct) {
+	public void setIdProduct(long idProduct) {
 		this.idProduct = idProduct;
 	}
 
-    public String getIdSize() {
+    public long getIdSize() {
 		return idSize;
 	}
 
-	public void setIdSize(String idSize) {
+	public void setIdSize(long idSize) {
 		this.idSize = idSize;
 	}
 
-    public String getIdCart() {
+    public long getIdCart() {
 		return idCart;
 	}
 
-	public void setIdCart(String idCart) {
+	public void setIdCart(long idCart) {
 		this.idCart = idCart;
 	}
 }
